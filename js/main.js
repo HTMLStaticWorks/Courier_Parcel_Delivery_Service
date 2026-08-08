@@ -29,56 +29,126 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Theme Toggle
-  const themeToggle = document.getElementById('themeToggle');
+  // --- Theme Toggle Logic ---
   const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-  
-  // Check local storage for theme
-  const currentTheme = localStorage.getItem("theme");
-  if (currentTheme == "dark") {
-    document.body.setAttribute("data-theme", "dark");
-  } else if (currentTheme == "light") {
-    document.body.removeAttribute("data-theme");
-  } else if (prefersDarkScheme.matches) {
-    document.body.setAttribute("data-theme", "dark");
-  }
 
-  if (themeToggle) {
-    themeToggle.addEventListener("click", () => {
+  const applyTheme = (theme) => {
+    if (theme === "dark") {
+      document.body.setAttribute("data-theme", "dark");
+    } else {
+      document.body.removeAttribute("data-theme");
+    }
+
+    // Update all theme toggle buttons across the DOM
+    document.querySelectorAll('#themeToggle, .theme-toggle-btn').forEach(btn => {
+      const icon = btn.querySelector('i');
+      if (icon) {
+        if (theme === "dark") {
+          icon.className = 'fas fa-sun';
+          btn.setAttribute('aria-label', 'Switch to Light Mode');
+          btn.setAttribute('title', 'Light Mode');
+        } else {
+          icon.className = 'fas fa-moon';
+          btn.setAttribute('aria-label', 'Switch to Dark Mode');
+          btn.setAttribute('title', 'Dark Mode');
+        }
+      }
+    });
+  };
+
+  // Determine initial theme
+  const savedTheme = localStorage.getItem("theme");
+  let currentTheme = "light";
+  if (savedTheme === "dark" || (!savedTheme && prefersDarkScheme.matches)) {
+    currentTheme = "dark";
+  }
+  applyTheme(currentTheme);
+
+  // Attach event listener to all theme toggles
+  document.querySelectorAll('#themeToggle, .theme-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
       const isDark = document.body.getAttribute("data-theme") === "dark";
-      if (isDark) {
-        document.body.removeAttribute("data-theme");
-        localStorage.setItem("theme", "light");
+      const newTheme = isDark ? "light" : "dark";
+      localStorage.setItem("theme", newTheme);
+      applyTheme(newTheme);
+    });
+  });
+
+  // --- RTL / LTR Direction & Language Toggle Logic ---
+  const applyDirection = (dir) => {
+    document.documentElement.setAttribute("dir", dir);
+
+    // Update direction toggle buttons
+    document.querySelectorAll('#dirToggle, .dir-toggle-btn').forEach(btn => {
+      if (dir === "rtl") {
+        btn.textContent = "LTR";
+        btn.setAttribute('aria-label', 'Switch to Left to Right');
+        btn.setAttribute('title', 'Switch to LTR');
       } else {
-        document.body.setAttribute("data-theme", "dark");
-        localStorage.setItem("theme", "dark");
+        btn.textContent = "RTL";
+        btn.setAttribute('aria-label', 'Switch to Right to Left');
+        btn.setAttribute('title', 'Switch to RTL');
       }
     });
-  }
 
-  // RTL/LTR Toggle
-  const dirToggle = document.getElementById('dirToggle');
-  
-  // Check local storage for direction
-  const currentDir = localStorage.getItem("dir") || "ltr";
-  document.documentElement.setAttribute("dir", currentDir);
-
-  if (dirToggle) {
-    dirToggle.addEventListener("click", () => {
-      const isRtl = document.documentElement.getAttribute("dir") === "rtl";
-      if (isRtl) {
-        document.documentElement.setAttribute("dir", "ltr");
-        localStorage.setItem("dir", "ltr");
+    // Update dynamic translation elements (data-en, data-ar, data-en-placeholder, data-ar-placeholder)
+    document.querySelectorAll('[data-en][data-ar]').forEach(el => {
+      if (dir === 'rtl') {
+        el.textContent = el.getAttribute('data-ar');
       } else {
-        document.documentElement.setAttribute("dir", "rtl");
-        localStorage.setItem("dir", "rtl");
+        el.textContent = el.getAttribute('data-en');
       }
     });
-  }
+
+    document.querySelectorAll('[data-en-placeholder][data-ar-placeholder]').forEach(el => {
+      if (dir === 'rtl') {
+        el.setAttribute('placeholder', el.getAttribute('data-ar-placeholder'));
+      } else {
+        el.setAttribute('placeholder', el.getAttribute('data-en-placeholder'));
+      }
+    });
+  };
+
+  // Determine initial direction
+  const savedDir = localStorage.getItem("dir") || "ltr";
+  applyDirection(savedDir);
+
+  // Attach event listener to all direction toggles
+  document.querySelectorAll('#dirToggle, .dir-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const activeDir = document.documentElement.getAttribute("dir") === "rtl" ? "rtl" : "ltr";
+      const newDir = activeDir === "rtl" ? "ltr" : "rtl";
+      localStorage.setItem("dir", newDir);
+      applyDirection(newDir);
+    });
+  });
+
+  // --- Password Visibility Toggle ---
+  document.querySelectorAll('.password-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', function () {
+      const wrapper = this.closest('.password-input-wrapper');
+      if (!wrapper) return;
+      const input = wrapper.querySelector('input');
+      const icon = this.querySelector('i');
+
+      if (input.type === 'password') {
+        input.type = 'text';
+        if (icon) {
+          icon.classList.remove('fa-eye');
+          icon.classList.add('fa-eye-slash');
+        }
+      } else {
+        input.type = 'password';
+        if (icon) {
+          icon.classList.remove('fa-eye-slash');
+          icon.classList.add('fa-eye');
+        }
+      }
+    });
+  });
 
   // Back to Top Button
   const backToTopBtn = document.getElementById("backToTop");
-  
   if (backToTopBtn) {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 300) {

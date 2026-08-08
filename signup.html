@@ -16,15 +16,17 @@
       justify-content: center;
       background-color: var(--bg-section);
       padding: 2rem;
+      position: relative;
     }
     .auth-card {
       background-color: var(--bg-card);
       width: 100%;
-      max-width: 500px;
+      max-width: 520px;
       padding: 3rem 2rem;
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-lg);
       border: 1px solid var(--border-color);
+      transition: var(--transition);
     }
     .auth-logo {
       font-size: 2rem;
@@ -39,25 +41,15 @@
     .auth-logo i {
       color: var(--accent);
     }
-    .auth-controls {
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      display: flex;
-      gap: 1rem;
-    }
-    [dir="rtl"] .auth-controls {
-      right: auto;
-      left: 1.5rem;
-    }
   </style>
 </head>
 <body>
 
+  <!-- Floating Auth Controls for Theme & RTL Toggle -->
   <div class="auth-controls">
-    <button class="icon-btn" id="themeToggle" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button>
-    <button class="icon-btn" id="dirToggle" aria-label="Toggle RTL/LTR" style="font-weight: 700; font-size: 0.875rem;">RTL</button>
-    <a href="index.html" class="icon-btn" aria-label="Go to Homepage"><i class="fas fa-home"></i></a>
+    <button class="icon-btn" id="themeToggle" aria-label="Toggle Theme" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+    <button class="icon-btn" id="dirToggle" aria-label="Toggle RTL/LTR" title="Toggle RTL/LTR" style="font-weight: 700; font-size: 0.8rem;">RTL</button>
+    <a href="index.html" class="icon-btn" aria-label="Go to Homepage" title="Go Home"><i class="fas fa-home"></i></a>
   </div>
 
   <div class="auth-page fade-in">
@@ -66,49 +58,67 @@
         <i class="fas fa-box-open"></i> SWIFT
       </a>
       
-      <h2 class="text-center mb-1">Create an Account</h2>
-      <p class="text-center text-muted mb-4">Join SWIFT for easy shipment management</p>
+      <h2 class="text-center mb-1" data-en="Create an Account" data-ar="إنشاء حساب جديد">Create an Account</h2>
+      <p class="text-center text-muted mb-4" data-en="Join SWIFT for easy shipment management" data-ar="انضم إلى SWIFT لإدارة شحناتك بسهولة">Join SWIFT for easy shipment management</p>
       
       <form action="dashboard.html" method="GET">
         <div class="form-group">
-          <label class="form-label">Full Name</label>
-          <input type="text" class="form-control" placeholder="John Doe" required>
+          <label class="form-label" data-en="Full Name" data-ar="الاسم الكامل">Full Name</label>
+          <input type="text" class="form-control" data-en-placeholder="John Doe" data-ar-placeholder="أحمد محمد" placeholder="John Doe" required>
         </div>
 
         <div class="grid grid-cols-2 gap-2" style="margin-bottom: 0;">
           <div class="form-group">
-            <label class="form-label">Email Address</label>
-            <input type="email" class="form-control" placeholder="john@example.com" required>
+            <label class="form-label" data-en="Email Address" data-ar="البريد الإلكتروني">Email Address</label>
+            <input type="email" class="form-control" data-en-placeholder="john@example.com" data-ar-placeholder="john@example.com" placeholder="john@example.com" required>
           </div>
           
           <div class="form-group">
-            <label class="form-label">Phone Number</label>
-            <input type="tel" class="form-control" placeholder="+1 (555) 000-0000" required>
+            <label class="form-label" data-en="Phone Number" data-ar="رقم الهاتف">Phone Number</label>
+            <input type="tel" class="form-control" data-en-placeholder="+1 (555) 000-0000" data-ar-placeholder="+1 (555) 000-0000" placeholder="+1 (555) 000-0000" required>
           </div>
         </div>
         
         <div class="grid grid-cols-2 gap-2" style="margin-bottom: 0;">
           <div class="form-group">
-            <label class="form-label">Password</label>
-            <input type="password" class="form-control" placeholder="Create password" required>
+            <label class="form-label" data-en="Password" data-ar="كلمة المرور">Password</label>
+            <div class="password-input-wrapper">
+              <input type="password" class="form-control" data-en-placeholder="Create password" data-ar-placeholder="إنشاء كلمة المرور" placeholder="Create password" required>
+              <button type="button" class="password-toggle-btn" aria-label="Toggle password visibility">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
           </div>
           
           <div class="form-group">
-            <label class="form-label">Confirm Password</label>
-            <input type="password" class="form-control" placeholder="Confirm password" required>
+            <label class="form-label" data-en="Confirm Password" data-ar="تأكيد كلمة المرور">Confirm Password</label>
+            <div class="password-input-wrapper">
+              <input type="password" class="form-control" data-en-placeholder="Confirm password" data-ar-placeholder="تأكيد كلمة المرور" placeholder="Confirm password" required>
+              <button type="button" class="password-toggle-btn" aria-label="Toggle password visibility">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
           </div>
         </div>
         
         <div class="form-group flex items-center gap-2 mt-2">
-          <input type="checkbox" id="terms" required style="width: 1rem; height: 1rem;">
-          <label for="terms" style="cursor: pointer; user-select: none; font-size: 0.875rem;">I accept the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a>.</label>
+          <input type="checkbox" id="terms" required style="width: 1rem; height: 1rem; cursor: pointer;">
+          <label for="terms" style="cursor: pointer; user-select: none; font-size: 0.875rem;">
+            <span data-en="I accept the" data-ar="أوافق على">I accept the</span> 
+            <a href="#" data-en="Terms & Conditions" data-ar="الشروط والأحكام">Terms & Conditions</a> 
+            <span data-en="and" data-ar="و">and</span> 
+            <a href="#" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>.
+          </label>
         </div>
         
-        <button type="submit" class="btn btn-primary btn-full mt-2">Create Account</button>
+        <button type="submit" class="btn btn-primary btn-full mt-2" data-en="Create Account" data-ar="إنشاء حساب">Create Account</button>
       </form>
       
       <div class="text-center mt-4">
-        <p class="text-muted">Already have an account? <a href="login.html" style="font-weight: 600;">Log in</a></p>
+        <p class="text-muted">
+          <span data-en="Already have an account?" data-ar="لديك حساب بالفعل؟">Already have an account?</span> 
+          <a href="login.html" style="font-weight: 600;" data-en="Log in" data-ar="تسجيل الدخول">Log in</a>
+        </p>
       </div>
     </div>
   </div>

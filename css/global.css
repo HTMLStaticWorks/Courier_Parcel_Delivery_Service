@@ -180,6 +180,16 @@ p {
 }
 [dir="rtl"] .text-left { text-align: right; }
 [dir="rtl"] .text-right { text-align: left; }
+[dir="rtl"] input, 
+[dir="rtl"] select, 
+[dir="rtl"] textarea {
+  text-align: right;
+  direction: rtl;
+}
+[dir="rtl"] input::placeholder,
+[dir="rtl"] textarea::placeholder {
+  text-align: right;
+}
 
 /* Social Links */
 .social-link {
@@ -197,3 +207,4 @@ p {
   color: var(--accent);
   transform: translateY(-3px);
 }
+
