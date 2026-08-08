@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | SWIFT</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .contact-hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://images.pexels.com/photos/5025633/pexels-photo-5025633.jpeg') center/cover;
+      background-color: var(--primary);
+      color: #fff;
+      padding: 6rem 0;
+      text-align: center;
+    }
+    .contact-hero h1 {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-box-open"></i> SWIFT
+      </a>
+      
+      <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home 1</a>
+        <a href="home-2.html" class="nav-link">Home 2</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="track-shipment.html" class="nav-link">Track Shipment</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+        
+        <div class="nav-controls">
+          <button class="icon-btn" id="themeToggle" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button>
+          <button class="icon-btn" id="dirToggle" aria-label="Toggle RTL/LTR" style="font-weight: 700; font-size: 0.875rem;">RTL</button>
+        </div>
+        
+        <div class="nav-actions flex items-center gap-2">
+          <a href="signup.html" class="btn btn-primary">Sign Up</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section class="contact-hero">
+      <div class="container fade-in">
+        <h1 class="mb-3">Get in Touch</h1>
+        <p style="max-width: 600px; margin: 0 auto; color: rgba(255,255,255,0.8);">Have questions about our services or need support with a shipment? Our team is here to help.</p>
+      </div>
+    </section>
+
+    <!-- Contact Info & Form -->
+    <section class="section container fade-in">
+      <div class="grid grid-cols-2 gap-4">
+        
+        <!-- Contact Info -->
+        <div>
+          <h2 class="mb-4">Contact Information</h2>
+          <p class="text-muted mb-4">Reach out to us directly through phone or email, or visit our main hub during business hours.</p>
+          
+          <div class="flex flex-col gap-4">
+            <div class="card p-3 flex items-center gap-3">
+              <div class="card-icon" style="margin-bottom: 0; width: 50px; height: 50px;"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <h4 style="margin-bottom: 0;">Main Headquarters</h4>
+                <p class="text-muted mb-0 font-sm">123 Logistics Way, Suite 400<br>Metropolis, NY 10001</p>
+              </div>
+            </div>
+            
+            <div class="card p-3 flex items-center gap-3">
+              <div class="card-icon" style="margin-bottom: 0; width: 50px; height: 50px;"><i class="fas fa-envelope"></i></div>
+              <div>
+                <h4 style="margin-bottom: 0;">Email Support</h4>
+                <p class="text-muted mb-0 font-sm">support@swift.com<br>sales@swift.com</p>
+              </div>
+            </div>
+            
+            <div class="card p-3 flex items-center gap-3">
+              <div class="card-icon" style="margin-bottom: 0; width: 50px; height: 50px;"><i class="fas fa-phone"></i></div>
+              <div>
+                <h4 style="margin-bottom: 0;">Phone Support</h4>
+                <p class="text-muted mb-0 font-sm">+1 (555) 123-4567<br>Mon-Sat, 8:00 AM - 8:00 PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="card p-4">
+          <h3 class="mb-4">Send a Message</h3>
+          <form onsubmit="event.preventDefault(); alert('Message sent successfully!'); this.reset();">
+            <div class="grid grid-cols-2 gap-2">
+              <div class="form-group">
+                <label class="form-label">First Name</label>
+                <input type="text" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Last Name</label>
+                <input type="text" class="form-control" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Tracking ID (Optional)</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section section-light fade-in" style="padding: 0;">
+      <!-- Using an iframe map embed for realistic look -->
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1839488316315!2d-73.98773138459367!3d40.75797897932684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1655225134764!5m2!1sen!2sus" width="100%" height="400" style="border:0; filter: grayscale(50%);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="grid grid-cols-4">
+        <div>
+          <div class="logo mb-3">
+            <i class="fas fa-box-open"></i> SWIFT
+          </div>
+          <p style="font-size: 0.875rem; margin-bottom: 1.5rem;">Your trusted local logistics partner for fast, secure, and reliable parcel delivery.</p>
+          <div class="flex gap-4">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Customer</h4>
+          <ul class="footer-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="track-shipment.html">Track Shipment</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">Create Account</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul class="footer-links">
+            <li class="flex items-center gap-2 mb-2"><i class="fas fa-phone" style="color: var(--accent);"></i> +1 (555) 123-4567</li>
+            <li class="flex items-center gap-2 mb-2"><i class="fas fa-envelope" style="color: var(--accent);"></i> support@swift.com</li>
+            <li class="flex items-center gap-2 mb-2"><i class="fas fa-clock" style="color: var(--accent);"></i> Mon-Sat: 8AM - 8PM</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 SWIFT Delivery Services. All rights reserved.</p>
+
+        <div class="flex gap-3" style="font-size: 0.875rem;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track Shipment | SWIFT</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .track-hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://images.pexels.com/photos/6169668/pexels-photo-6169668.jpeg') center/cover;
+      background-color: var(--primary);
+      color: #fff;
+      padding: 6rem 0;
+      text-align: center;
+    }
+    .track-hero h1 {
+      color: #fff;
+    }
+    
+    .tracking-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .tracking-search {
+      background-color: var(--primary);
+      padding: 3rem;
+      border-radius: var(--radius-lg);
+      margin-top: -4rem;
+      position: relative;
+      z-index: 10;
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .tracking-result {
+      display: none;
+      margin-top: 3rem;
+    }
+    
+    .tracking-result.active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+    
+    .shipment-summary {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .summary-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    
+    .summary-item label {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+    .summary-item div {
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-box-open"></i> SWIFT
+      </a>
+      
+      <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home 1</a>
+        <a href="home-2.html" class="nav-link">Home 2</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="track-shipment.html" class="nav-link active">Track Shipment</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        
+        <div class="nav-controls">
+          <button class="icon-btn" id="themeToggle" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button>
+          <button class="icon-btn" id="dirToggle" aria-label="Toggle RTL/LTR" style="font-weight: 700; font-size: 0.875rem;">RTL</button>
+        </div>
+        
+        <div class="nav-actions flex items-center gap-2">
+          <a href="signup.html" class="btn btn-primary">Sign Up</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section class="track-hero" style="padding-bottom: 8rem;">
+      <div class="container fade-in">
+        <h1 class="mb-3">Track Your Parcel</h1>
+        <p style="max-width: 600px; margin: 0 auto; color: rgba(255,255,255,0.8);">Enter your tracking ID below to get real-time status updates on your shipment.</p>
+      </div>
+    </section>
+
+    <section class="container pb-5 fade-in">
+      <div class="tracking-wrapper">
+        <div class="tracking-search">
+          <form id="trackingForm" class="flex flex-col md-flex-row gap-2" style="flex-direction: column; @media (min-width:768px){flex-direction:row;}">
+            <input type="text" id="trackingInput" class="form-control" placeholder="Enter Tracking ID (e.g., SP123456789)" required style="padding: 1rem; font-size: 1.125rem;">
+            <button type="submit" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.125rem;">Track <i class="fas fa-search"></i></button>
+          </form>
+        </div>
+
+        <div class="tracking-result" id="trackingResult">
+          <!-- Shipment Summary -->
+          <div class="shipment-summary">
+            <div class="flex justify-between items-center mb-4 pb-3" style="border-bottom: 1px solid var(--border-color);">
+              <div>
+                <h3 class="mb-0">Shipment <span id="displayTrackingId" style="color: var(--primary);">SP123456789</span></h3>
+              </div>
+              <div>
+                <span class="badge badge-transit" style="font-size: 1rem;">In Transit</span>
+              </div>
+            </div>
+            
+            <div class="summary-grid">
+              <div class="summary-item">
+                <label>Estimated Delivery</label>
+                <div>Oct 12, 2026 - By 8:00 PM</div>
+              </div>
+              <div class="summary-item">
+                <label>From</label>
+                <div>New York, NY</div>
+              </div>
+              <div class="summary-item">
+                <label>To</label>
+                <div>Los Angeles, CA</div>
+              </div>
+              <div class="summary-item">
+                <label>Parcel Type</label>
+                <div>Standard - Medium (5kg)</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tracking Timeline -->
+          <div class="card p-4">
+            <h3 class="mb-4">Tracking History</h3>
+            <div class="timeline">
+              <div class="timeline-item completed">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <h4>Booking Confirmed</h4>
+                  <p>Oct 10, 2026 - 09:00 AM • System generated</p>
+                </div>
+              </div>
+              <div class="timeline-item completed">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <h4>Pickup Assigned</h4>
+                  <p>Oct 10, 2026 - 10:15 AM • Driver: John Doe assigned</p>
+                </div>
+              </div>
+              <div class="timeline-item completed">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <h4>Parcel Picked Up</h4>
+                  <p>Oct 10, 2026 - 01:30 PM • New York Facility</p>
+                </div>
+              </div>
+              <div class="timeline-item active">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <h4>In Transit</h4>
+                  <p>Oct 11, 2026 - 04:45 AM • Departed sorting center</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <h4>Out for Delivery</h4>
+                  <p>Pending</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <h4>Delivered</h4>
+                  <p>Pending</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tracking Status Guide -->
+    <section class="section section-light fade-in">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2>Understanding Your Status</h2>
+          <p class="text-muted">What the tracking updates mean for your delivery.</p>
+        </div>
+        <div class="grid grid-cols-4 gap-4">
+          <div class="card text-center" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="card-icon mx-auto" style="margin: 0 auto 1.5rem; color: var(--accent);"><i class="fas fa-box"></i></div>
+            <h4>Order Placed</h4>
+            <p class="text-muted" style="flex-grow: 1; font-size: 0.875rem;">Your shipment details have been received and the label is printed.</p>
+          </div>
+          <div class="card text-center" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="card-icon mx-auto" style="margin: 0 auto 1.5rem; color: var(--status-pending);"><i class="fas fa-warehouse"></i></div>
+            <h4>In Transit</h4>
+            <p class="text-muted" style="flex-grow: 1; font-size: 0.875rem;">The parcel is moving through our network towards its destination.</p>
+          </div>
+          <div class="card text-center" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="card-icon mx-auto" style="margin: 0 auto 1.5rem; color: var(--status-transit);"><i class="fas fa-truck"></i></div>
+            <h4>Out for Delivery</h4>
+            <p class="text-muted" style="flex-grow: 1; font-size: 0.875rem;">Our courier is on their way to deliver the parcel to your address.</p>
+          </div>
+          <div class="card text-center" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="card-icon mx-auto" style="margin: 0 auto 1.5rem; color: var(--status-delivered);"><i class="fas fa-check-circle"></i></div>
+            <h4>Delivered</h4>
+            <p class="text-muted" style="flex-grow: 1; font-size: 0.875rem;">The shipment has been successfully delivered to the recipient.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support CTA -->
+    <section class="section text-center fade-in">
+      <div class="container">
+        <div class="card p-5" style="background-color: var(--primary); color: #fff; max-width: 800px; margin: 0 auto; border-radius: var(--radius-lg);">
+          <h2 style="color: #fff; margin-bottom: 1rem;">Need Help With Your Shipment?</h2>
+          <p style="color: rgba(255,255,255,0.8); margin-bottom: 2rem;">If your tracking information hasn't updated in 48 hours or you need to change your delivery address, our support team is ready to help.</p>
+          <a href="contact.html" class="btn" style="background-color: var(--accent); color: #fff; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 2rem; border-radius: var(--radius-md); font-weight: 600;">Contact Support <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer mt-4">
+    <!-- Footer content hidden for brevity in planning, same as other pages -->
+    <div class="container">
+      <div class="grid grid-cols-4">
+        <div>
+          <div class="logo mb-3">
+            <i class="fas fa-box-open"></i> SWIFT
+          </div>
+          <p style="font-size: 0.875rem; margin-bottom: 1.5rem;">Your trusted local logistics partner for fast, secure, and reliable parcel delivery.</p>
+          <div class="flex gap-4">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Customer</h4>
+          <ul class="footer-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="track-shipment.html">Track Shipment</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">Create Account</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul class="footer-links">
+            <li class="flex items-center gap-2 mb-2"><i class="fas fa-phone" style="color: var(--accent);"></i> +1 (555) 123-4567</li>
+            <li class="flex items-center gap-2 mb-2"><i class="fas fa-envelope" style="color: var(--accent);"></i> support@swift.com</li>
+            <li class="flex items-center gap-2 mb-2"><i class="fas fa-clock" style="color: var(--accent);"></i> Mon-Sat: 8AM - 8PM</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const trackId = urlParams.get('id');
+      
+      const form = document.getElementById('trackingForm');
+      const input = document.getElementById('trackingInput');
+      const result = document.getElementById('trackingResult');
+      const displayId = document.getElementById('displayTrackingId');
+
+      if (trackId) {
+        input.value = trackId;
+        displayId.innerText = trackId;
+        result.classList.add('active');
+      }
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        displayId.innerText = input.value;
+        
+        // Simulate loading
+        const btn = form.querySelector('button');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+        
+        result.classList.remove('active');
+        
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          result.classList.add('active');
+        }, 800);
+      });
+    });
+  </script>
+</body>
+</html>

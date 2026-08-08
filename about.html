@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | SWIFT</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .about-hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.pexels.com/photos/4484045/pexels-photo-4484045.jpeg') center/cover;
+      background-color: var(--primary);
+      color: #fff;
+      padding: 6rem 0;
+      text-align: center;
+    }
+
+    .about-hero h1 {
+      color: #fff;
+    }
+
+    .stats-container {
+      margin-top: -3rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .stat-box {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-color);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .mission-vision .card {
+      height: 100%;
+    }
+
+    .pricing-table-wrapper {
+      overflow-x: auto;
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+    }
+
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 800px;
+    }
+
+    .pricing-table th,
+    .pricing-table td {
+      padding: 1.5rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    [dir="rtl"] .pricing-table th,
+    [dir="rtl"] .pricing-table td {
+      text-align: right;
+    }
+
+    .pricing-table th {
+      background-color: rgba(0, 0, 0, 0.02);
+      font-weight: 700;
+    }
+
+    [data-theme="dark"] .pricing-table th {
+      background-color: rgba(255, 255, 255, 0.02);
+    }
+
+    .pricing-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .price-value {
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    [data-theme="dark"] .price-value {
+      color: var(--primary-light);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-box-open"></i> SWIFT
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home 1</a>
+        <a href="home-2.html" class="nav-link">Home 2</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="track-shipment.html" class="nav-link">Track Shipment</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+
+        <div class="nav-controls">
+          <button class="icon-btn" id="themeToggle" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button>
+          <button class="icon-btn" id="dirToggle" aria-label="Toggle RTL/LTR"
+            style="font-weight: 700; font-size: 0.875rem;">RTL</button>
+        </div>
+
+        <div class="nav-actions flex items-center gap-2">
+          <a href="signup.html" class="btn btn-primary">Sign Up</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- About Hero -->
+    <section class="about-hero">
+      <div class="container fade-in">
+        <h1>About SWIFT</h1>
+        <p style="max-width: 600px; margin: 0 auto; color: rgba(255,255,255,0.8);">We are on a mission to redefine local
+          logistics by providing fast, secure, and transparent delivery services for individuals and businesses.</p>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-container container fade-in">
+      <div class="grid grid-cols-4">
+        <div class="stat-box">
+          <div class="stat-number">10k+</div>
+          <div class="text-muted font-weight-500">Deliveries Completed</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">50+</div>
+          <div class="text-muted font-weight-500">Service Zones</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">5k+</div>
+          <div class="text-muted font-weight-500">Happy Customers</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">99%</div>
+          <div class="text-muted font-weight-500">On-Time Rate</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Company Story -->
+    <section class="section container fade-in">
+      <div class="grid grid-cols-2 items-center gap-4">
+        <div>
+          <img src="https://images.pexels.com/photos/6169673/pexels-photo-6169673.jpeg" alt="Courier handing package"
+            style="border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
+        </div>
+        <div>
+          <span class="badge badge-transit mb-3">Our Story</span>
+          <h2 class="mb-3">Driven by Speed, Built on Trust</h2>
+          <p class="mb-3">Founded in 2020, SWIFT began with a simple idea: local deliveries shouldn't be complicated or
+            opaque. We noticed a gap in the market for a courier service that combined the speed of local riders with
+            the technology of major logistics networks.</p>
+          <p>Today, we operate a vast fleet of delivery vehicles and utilize a state-of-the-art tracking system to
+            ensure that whether you are sending a personal gift or fulfilling hundreds of e-commerce orders, your
+            parcels are in the safest hands.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="section section-light mission-vision fade-in">
+      <div class="container grid grid-cols-2 gap-4">
+        <div class="card p-4">
+          <i class="fas fa-bullseye mb-3" style="font-size: 2.5rem; color: var(--accent);"></i>
+          <h3>Our Mission</h3>
+          <p class="text-muted">To provide seamless, reliable, and affordable courier services that connect people and
+            businesses across our delivery zones. We aim to take the stress out of logistics through transparency and
+            technology.</p>
+        </div>
+        <div class="card p-4">
+          <i class="fas fa-eye mb-3" style="font-size: 2.5rem; color: var(--accent);"></i>
+          <h3>Our Vision</h3>
+          <p class="text-muted">To become the region's most trusted logistics partner, setting the standard for speed,
+            sustainability, and customer-centric delivery experiences.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Safety Standards -->
+    <section class="section container fade-in">
+      <div class="text-center mb-4">
+        <h2>Safety & Parcel Handling</h2>
+        <p class="text-muted">Your package's safety is our top priority</p>
+      </div>
+      <div class="grid grid-cols-3 mt-4">
+        <div class="text-center">
+          <div class="card-icon mx-auto"><i class="fas fa-shield-alt"></i></div>
+          <h4>Secure Handling</h4>
+          <p class="text-muted font-sm">All our staff are trained in secure package handling to prevent damage during
+            transit.</p>
+        </div>
+        <div class="text-center">
+          <div class="card-icon mx-auto"><i class="fas fa-temperature-low"></i></div>
+          <h4>Climate Controlled</h4>
+          <p class="text-muted font-sm">Specialized fleet options for sensitive items requiring temperature control.</p>
+        </div>
+        <div class="text-center">
+          <div class="card-icon mx-auto"><i class="fas fa-clipboard-check"></i></div>
+          <h4>Verified Drop-offs</h4>
+          <p class="text-muted font-sm">Every delivery is verified with GPS coordinates, photos, and digital signatures.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page Header (Pricing) -->
+    <section class="section section-dark text-center">
+      <div class="container fade-in">
+        <h2 class="mb-3">Transparent Pricing</h2>
+        <p style="max-width: 600px; margin: 0 auto; color: rgba(255,255,255,0.8);">No hidden fees or surprises.
+          Calculate your shipping costs based on parcel size, destination zone, and delivery speed.</p>
+      </div>
+    </section>
+
+    <!-- Pricing Factors -->
+    <section class="section container fade-in">
+      <div class="text-center mb-4">
+        <h2>How We Calculate Rates</h2>
+        <p class="text-muted">Final pricing may depend on the following factors:</p>
+      </div>
+
+      <div class="grid grid-cols-3 mt-4">
+        <div class="card text-center">
+          <i class="fas fa-weight-hanging mb-3" style="font-size: 2rem; color: var(--accent);"></i>
+          <h4>Parcel Size & Weight</h4>
+          <p class="text-muted font-sm">Rates are categorized into Small, Medium, Large, and Extra Large based on
+            dimensions and weight.</p>
+        </div>
+        <div class="card text-center">
+          <i class="fas fa-map-marked-alt mb-3" style="font-size: 2rem; color: var(--accent);"></i>
+          <h4>Delivery Zones</h4>
+          <p class="text-muted font-sm">Distance matters. We separate zones into Local (within city), Nearby
+            (surrounding areas), and Extended.</p>
+        </div>
+        <div class="card text-center">
+          <i class="fas fa-shipping-fast mb-3" style="font-size: 2rem; color: var(--accent);"></i>
+          <h4>Delivery Type</h4>
+          <p class="text-muted font-sm">Choose between Standard (2-3 days), Express (Next day), or Same-Day delivery
+            based on urgency.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Pricing Table -->
+    <section class="section section-light fade-in">
+      <div class="container">
+        <h3 class="mb-4">Standard Delivery Rates (2-3 Business Days)</h3>
+        <div class="pricing-table-wrapper mb-4">
+          <table class="pricing-table">
+            <thead>
+              <tr>
+                <th>Parcel Size</th>
+                <th>Description</th>
+                <th>Local Zone</th>
+                <th>Nearby Areas</th>
+                <th>Extended Zones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Small</strong></td>
+                <td class="text-muted">Up to 2kg (e.g., Documents, small books)</td>
+                <td class="price-value">$5.99</td>
+                <td class="price-value">$8.99</td>
+                <td class="price-value">$12.99</td>
+              </tr>
+              <tr>
+                <td><strong>Medium</strong></td>
+                <td class="text-muted">Up to 10kg (e.g., Shoe boxes, electronics)</td>
+                <td class="price-value">$9.99</td>
+                <td class="price-value">$14.99</td>
+                <td class="price-value">$19.99</td>
+              </tr>
+              <tr>
+                <td><strong>Large</strong></td>
+                <td class="text-muted">Up to 25kg (e.g., Appliances, multiple items)</td>
+                <td class="price-value">$18.99</td>
+                <td class="price-value">$24.99</td>
+                <td class="price-value">$34.99</td>
+              </tr>
+              <tr>
+                <td><strong>Extra Large</strong></td>
+                <td class="text-muted">Up to 50kg (e.g., Furniture parts, bulk stock)</td>
+                <td class="price-value">$35.99</td>
+                <td class="price-value">$45.99</td>
+                <td class="price-value">$65.99</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mt-4">
+          <div class="card">
+            <h4>Express Delivery (Next Day)</h4>
+            <p class="text-muted">Add <strong style="color: var(--accent);">+$10.00</strong> to the standard rate for
+              guaranteed next business day delivery. Available across all zones.</p>
+          </div>
+          <div class="card">
+            <h4>Same-Day Delivery</h4>
+            <p class="text-muted">Add <strong style="color: var(--accent);">+$25.00</strong> to the standard rate. Only
+              available for Local and Nearby zones. Cut-off time is 1:00 PM.</p>
+          </div>
+        </div>
+
+        <div class="text-center mt-4 pt-3">
+          <a href="dashboard.html" class="btn btn-primary" style="font-size: 1.125rem; padding: 1rem 2rem;">Book a
+            Pickup Now</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="grid grid-cols-4">
+        <div>
+          <div class="logo mb-3">
+            <i class="fas fa-box-open"></i> SWIFT
+          </div>
+          <p style="font-size: 0.875rem; margin-bottom: 1.5rem;">Your trusted local logistics partner for fast,
+            secure, and reliable parcel delivery.</p>
+          <div class="flex gap-4">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Customer</h4>
+          <ul class="footer-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="track-shipment.html">Track Shipment</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">Create Account</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul class="footer-links">
+            <li class="flex items-center gap-2 mb-2"><i class="fas fa-phone" style="color: var(--accent);"></i> +1 (555)
+              123-4567</li>
+            <li class="flex items-center gap-2 mb-2"><i class="fas fa-envelope" style="color: var(--accent);"></i>
+              support@swift.com</li>
+            <li class="flex items-center gap-2 mb-2"><i class="fas fa-clock" style="color: var(--accent);"></i> Mon-Sat:
+              8AM - 8PM</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 SWIFT Delivery Services. All rights reserved.</p>
+
+        <div class="flex gap-3" style="font-size: 0.875rem;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

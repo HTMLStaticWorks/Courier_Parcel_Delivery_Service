@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services | SWIFT</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .services-hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://images.pexels.com/photos/5025669/pexels-photo-5025669.jpeg') center/cover;
+      background-color: var(--primary);
+      color: #fff;
+      padding: 6rem 0;
+      text-align: center;
+    }
+    .services-hero h1 {
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-box-open"></i> SWIFT
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home 1</a>
+        <a href="home-2.html" class="nav-link">Home 2</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link active">Services</a>
+        <a href="track-shipment.html" class="nav-link">Track Shipment</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+
+        <div class="nav-controls">
+          <button class="icon-btn" id="themeToggle" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button>
+          <button class="icon-btn" id="dirToggle" aria-label="Toggle RTL/LTR"
+            style="font-weight: 700; font-size: 0.875rem;">RTL</button>
+        </div>
+
+        <div class="nav-actions flex items-center gap-2">
+          <a href="signup.html" class="btn btn-primary">Sign Up</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section class="services-hero">
+      <div class="container fade-in">
+        <h1 class="mb-3">Courier & Delivery Services</h1>
+        <p style="max-width: 600px; margin: 0 auto; color: rgba(255,255,255,0.8);">From documents to bulk freight, we
+          have a specialized delivery service to meet your timeline and budget.</p>
+      </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="section container fade-in">
+      <div class="grid grid-cols-2 gap-4">
+
+        <!-- Service 1 -->
+        <div class="card p-0" style="overflow: hidden;">
+          <img src="https://images.pexels.com/photos/4440771/pexels-photo-4440771.jpeg" alt="Same Day Delivery"
+            style="height: 200px; width: 100%; object-fit: cover;">
+          <div class="p-4 flex flex-col justify-between" style="flex: 1;">
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <h3>Same-Day Delivery</h3>
+                <span class="badge badge-transit">Local Only</span>
+              </div>
+              <p class="text-muted">Immediate pickup and delivery on the exact same day. Perfect for time-sensitive
+                materials.</p>
+              <ul class="mb-4">
+                <li><strong>Best for:</strong> Urgent documents, medical supplies, last-minute gifts</li>
+                <li><strong>Est. Time:</strong> 2 - 6 Hours</li>
+              </ul>
+            </div>
+            <a href="dashboard.html" class="btn btn-primary">Book Same-Day Delivery</a>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="card p-0" style="overflow: hidden;">
+          <img src="https://images.pexels.com/photos/7843999/pexels-photo-7843999.jpeg" alt="Standard Delivery"
+            style="height: 200px; width: 100%; object-fit: cover;">
+          <div class="p-4 flex flex-col justify-between" style="flex: 1;">
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <h3>Standard Parcel</h3>
+                <span class="badge" style="background: rgba(0,0,0,0.05);">All Zones</span>
+              </div>
+              <p class="text-muted">Our most cost-effective solution for regular shipments. Reliable routing and
+                handling.</p>
+              <ul class="mb-4">
+                <li><strong>Best for:</strong> Retail returns, non-urgent packages, clothing</li>
+                <li><strong>Est. Time:</strong> 2 - 3 Business Days</li>
+              </ul>
+            </div>
+            <a href="dashboard.html" class="btn btn-outline">Book Standard Delivery</a>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="card p-0" style="overflow: hidden;">
+          <img src="https://images.pexels.com/photos/6169129/pexels-photo-6169129.jpeg" alt="Express Delivery"
+            style="height: 200px; width: 100%; object-fit: cover;">
+          <div class="p-4 flex flex-col justify-between" style="flex: 1;">
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <h3>Express Delivery</h3>
+                <span class="badge badge-pending">Popular</span>
+              </div>
+              <p class="text-muted">Prioritized sorting and routing for faster-than-standard delivery across extended
+                zones.</p>
+              <ul class="mb-4">
+                <li><strong>Best for:</strong> Electronics, e-commerce orders, important items</li>
+                <li><strong>Est. Time:</strong> Next Business Day</li>
+              </ul>
+            </div>
+            <a href="dashboard.html" class="btn btn-outline">Book Express Delivery</a>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="card p-0" style="overflow: hidden;">
+          <img src="https://images.pexels.com/photos/7362962/pexels-photo-7362962.jpeg" alt="Doorstep Pickup"
+            style="height: 200px; width: 100%; object-fit: cover;">
+          <div class="p-4 flex flex-col justify-between" style="flex: 1;">
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <h3>Doorstep Pickup</h3>
+                <span class="badge badge-delivered">Convenient</span>
+              </div>
+              <p class="text-muted">Don't want to visit a drop-off point? We'll come straight to your door to collect
+                the parcel.</p>
+              <ul class="mb-4">
+                <li><strong>Best for:</strong> Heavy items, busy schedules, remote working</li>
+                <li><strong>Est. Time:</strong> Scheduled Window</li>
+              </ul>
+            </div>
+            <a href="dashboard.html" class="btn btn-outline">Schedule a Pickup</a>
+          </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="card p-0" style="overflow: hidden;">
+          <img src="https://images.pexels.com/photos/4481531/pexels-photo-4481531.jpeg" alt="Business Shipments"
+            style="height: 200px; width: 100%; object-fit: cover;">
+          <div class="p-4 flex flex-col justify-between" style="flex: 1;">
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <h3>Business & Bulk</h3>
+                <span class="badge" style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6;">B2B</span>
+              </div>
+              <p class="text-muted">Specialized logistics for enterprise clients. API integration, bulk discounts, and
+                dedicated account managers.</p>
+              <ul class="mb-4">
+                <li><strong>Best for:</strong> E-commerce stores, manufacturing, regular bulk sending</li>
+                <li><strong>Est. Time:</strong> Custom SLA</li>
+              </ul>
+            </div>
+            <a href="contact.html" class="btn btn-outline">Contact Sales</a>
+          </div>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="card p-0" style="overflow: hidden;">
+          <img src="https://images.pexels.com/photos/48148/document-agreement-documents-sign-48148.jpeg" alt="Secure Document"
+            style="height: 200px; width: 100%; object-fit: cover;">
+          <div class="p-4 flex flex-col justify-between" style="flex: 1;">
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <h3>Secure Document</h3>
+                <span class="badge" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">Secure</span>
+              </div>
+              <p class="text-muted">Confidential handling of sensitive paperwork with mandatory ID verification on
+                delivery.</p>
+              <ul class="mb-4">
+                <li><strong>Best for:</strong> Legal contracts, passports, financial records</li>
+                <li><strong>Est. Time:</strong> 1 - 2 Business Days</li>
+              </ul>
+            </div>
+            <a href="dashboard.html" class="btn btn-outline">Send Document</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="grid grid-cols-4">
+        <div>
+          <div class="logo mb-3">
+            <i class="fas fa-box-open"></i> SWIFT
+          </div>
+          <p style="font-size: 0.875rem; margin-bottom: 1.5rem;">Your trusted local logistics partner for fast,
+            secure, and reliable parcel delivery.</p>
+          <div class="flex gap-4">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Customer</h4>
+          <ul class="footer-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="track-shipment.html">Track Shipment</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">Create Account</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul class="footer-links">
+            <li class="flex items-center gap-2 mb-2"><i class="fas fa-phone" style="color: var(--accent);"></i> +1 (555)
+              123-4567</li>
+            <li class="flex items-center gap-2 mb-2"><i class="fas fa-envelope" style="color: var(--accent);"></i>
+              support@swift.com</li>
+            <li class="flex items-center gap-2 mb-2"><i class="fas fa-clock" style="color: var(--accent);"></i> Mon-Sat:
+              8AM - 8PM</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 SWIFT Delivery Services. All rights reserved.</p>
+
+        <div class="flex gap-3" style="font-size: 0.875rem;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
