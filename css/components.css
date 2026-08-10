@@ -43,6 +43,15 @@
   background-color: var(--primary);
   color: #fff !important;
 }
+.btn-outline-white {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+.btn-outline-white:hover {
+  background-color: #fff;
+  color: var(--primary) !important;
+}
 [data-theme="dark"] .btn-outline {
   border-color: var(--primary-light);
   color: var(--text-main);
