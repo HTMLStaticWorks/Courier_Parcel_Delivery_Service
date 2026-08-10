@@ -1,3 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <path fill="#f48c06" d="M12.9 204C4.5 212.8 0 224.7 0 237V464c0 26.5 21.5 48 48 48H464c26.5 0 48-21.5 48-48V237c0-12.3-4.5-24.2-12.9-33L405.3 103C395.7 93.3 382.7 88 368.9 88H143.1c-13.8 0-26.8 5.3-36.4 15L12.9 204zM44.4 224L118 149.3c3.8-3.9 9.1-6.1 14.5-6.1H379.5c5.4 0 10.7 2.2 14.5 6.1L467.6 224H336l-32.9 41.1c-8 10-20.1 15.8-33.1 15.8H242c-13 0-25.1-5.8-33.1-15.8L176 224H44.4z"/>
+<svg viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .stroke-c { stroke: #0b2545; }
+    .fill-c { fill: #0b2545; }
+    @media (prefers-color-scheme: dark) {
+      .stroke-c { stroke: #ffffff; }
+      .fill-c { fill: #ffffff; }
+    }
+  </style>
+  <path class="stroke-c" d="M4 10H9" stroke-width="3" stroke-linecap="round"/>
+  <path class="stroke-c" d="M1 16H10" stroke-width="3" stroke-linecap="round"/>
+  <path class="stroke-c" d="M5 22H8" stroke-width="3" stroke-linecap="round"/>
+  <path class="fill-c" d="M23 4L13 9L23 14L33 9L23 4Z"/>
+  <path d="M13 9V21L23 26V14L13 9Z" fill="#f48c06"/>
+  <path d="M33 9V21L23 26V14L33 9Z" fill="#f48c06" fill-opacity="0.65"/>
 </svg>
