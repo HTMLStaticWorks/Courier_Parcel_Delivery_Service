@@ -18,6 +18,9 @@
       color: #fff;
       padding: 6rem 0;
       overflow: hidden;
+      min-height: calc(100vh - 76px);
+      display: flex;
+      align-items: center;
     }
 
     .hero-bg {
@@ -93,12 +96,14 @@
       flex: 1;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       .hero-bg {
         width: 100%;
         opacity: 0.2;
       }
+    }
 
+    @media (max-width: 768px) {
       .track-form {
         flex-direction: column;
       }
@@ -144,6 +149,7 @@
       font-size: 2rem;
       margin: 0 auto 1.5rem;
       transition: var(--transition);
+      overflow: hidden;
     }
 
     .process-step:hover .process-icon {
@@ -318,22 +324,22 @@
 
       <div class="grid grid-cols-4 mt-4">
         <div class="process-step">
-          <div class="process-icon"><i class="fas fa-laptop-house"></i></div>
+          <div class="process-icon"><img src="https://images.pexels.com/photos/4348401/pexels-photo-4348401.jpeg?auto=compress&cs=tinysrgb&w=160" alt="Book" style="width: 100%; height: 100%; object-fit: cover;"></div>
           <h4>1. Book</h4>
           <p class="text-muted font-sm">Schedule a pickup online via your dashboard.</p>
         </div>
         <div class="process-step">
-          <div class="process-icon"><i class="fas fa-people-carry-box"></i></div>
+          <div class="process-icon"><img src="https://images.pexels.com/photos/4393668/pexels-photo-4393668.jpeg?auto=compress&cs=tinysrgb&w=160" alt="Pickup" style="width: 100%; height: 100%; object-fit: cover;"></div>
           <h4>2. Pickup</h4>
           <p class="text-muted font-sm">Our courier collects your parcel directly from your door.</p>
         </div>
         <div class="process-step">
-          <div class="process-icon"><i class="fas fa-truck-moving"></i></div>
+          <div class="process-icon"><img src="https://images.pexels.com/photos/6868160/pexels-photo-6868160.jpeg?auto=compress&cs=tinysrgb&w=160" alt="In Transit" style="width: 100%; height: 100%; object-fit: cover;"></div>
           <h4>3. In Transit</h4>
           <p class="text-muted font-sm">Your parcel is securely transported to the destination.</p>
         </div>
         <div class="process-step">
-          <div class="process-icon"><i class="fas fa-box-open"></i></div>
+          <div class="process-icon"><img src="https://images.pexels.com/photos/10834810/pexels-photo-10834810.jpeg?auto=compress&cs=tinysrgb&w=160" alt="Delivered" style="width: 100%; height: 100%; object-fit: cover;"></div>
           <h4>4. Delivered</h4>
           <p class="text-muted font-sm">The package is safely handed over to the receiver.</p>
         </div>

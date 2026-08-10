@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="css/components.css">
   <style>
     .about-hero {
-      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.pexels.com/photos/4484045/pexels-photo-4484045.jpeg') center/cover;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.pexels.com/photos/4484045/pexels-photo-4484045.jpeg') top center/cover;
       background-color: var(--primary);
       color: #fff;
       padding: 6rem 0;
@@ -35,6 +35,12 @@
       text-align: center;
       box-shadow: var(--shadow-md);
       border: 1px solid var(--border-color);
+      transition: var(--transition);
+    }
+
+    .stat-box:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-5px);
     }
 
     .stat-number {
@@ -188,14 +194,14 @@
     <!-- Mission & Vision -->
     <section class="section section-light mission-vision fade-in">
       <div class="container grid grid-cols-2 gap-4">
-        <div class="card p-4">
+        <div class="card p-4 text-center">
           <i class="fas fa-bullseye mb-3" style="font-size: 2.5rem; color: var(--accent);"></i>
           <h3>Our Mission</h3>
           <p class="text-muted">To provide seamless, reliable, and affordable courier services that connect people and
             businesses across our delivery zones. We aim to take the stress out of logistics through transparency and
             technology.</p>
         </div>
-        <div class="card p-4">
+        <div class="card p-4 text-center">
           <i class="fas fa-eye mb-3" style="font-size: 2.5rem; color: var(--accent);"></i>
           <h3>Our Vision</h3>
           <p class="text-muted">To become the region's most trusted logistics partner, setting the standard for speed,
