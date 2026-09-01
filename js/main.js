@@ -39,6 +39,18 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.removeAttribute("data-theme");
     }
 
+    // Swap logos based on theme
+    document.querySelectorAll('img[src*="logo.svg"], img[src*="logo-light.svg"]').forEach(img => {
+      if (theme === "dark") {
+        if (!img.src.includes("logo-light.svg")) {
+          img.src = img.src.replace("logo.svg", "logo-light.svg");
+        }
+      } else {
+        img.src = img.src.replace("logo-light.svg", "logo.svg");
+      }
+    });
+
+
     // Update all theme toggle buttons across the DOM
     document.querySelectorAll('#themeToggle, .theme-toggle-btn').forEach(btn => {
       const icon = btn.querySelector('i');

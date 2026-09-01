@@ -26,13 +26,33 @@
     }
     
     .tracking-search {
-      background-color: var(--primary);
-      padding: 3rem;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 2.5rem;
       border-radius: var(--radius-lg);
-      margin-top: -4rem;
+      margin-top: -5rem;
       position: relative;
       z-index: 10;
       box-shadow: var(--shadow-lg);
+    }
+    
+    .tracking-form-row {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    @media (min-width: 768px) {
+      .tracking-form-row {
+        flex-direction: row;
+      }
+      .tracking-form-row input {
+        flex: 1;
+      }
+      .tracking-form-row button {
+        padding-left: 3rem;
+        padding-right: 3rem;
+      }
     }
     
     .tracking-result {
@@ -79,7 +99,7 @@
   <header class="header">
     <div class="nav-container">
       <a href="index.html" class="logo">
-        <svg width="28" height="24" viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 10H9" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M1 16H10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M5 22H8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M23 4L13 9L23 14L33 9L23 4Z" fill="currentColor"/><path d="M13 9V21L23 26V14L13 9Z" fill="var(--accent)"/><path d="M33 9V21L23 26V14L33 9Z" fill="var(--accent)" fill-opacity="0.65"/></svg> SWIFT
+        <img src="assets/images/logo.svg" alt="SWIFT Logo" style="height: 32px; width: auto; vertical-align: middle;">
       </a>
       
       <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
@@ -87,13 +107,15 @@
       </button>
 
       <nav class="nav-menu" id="navMenu">
-        <a href="index.html" class="nav-link">Home 1</a>
-        <a href="home-2.html" class="nav-link">Home 2</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="services.html" class="nav-link">Services</a>
-        <a href="track-shipment.html" class="nav-link active">Track Shipment</a>
-        <a href="dashboard.html" class="nav-link">Dashboard</a>
-        <a href="contact.html" class="nav-link">Contact</a>
+        <div class="main-links">
+          <a href="index.html" class="nav-link">Home 1</a>
+          <a href="home-2.html" class="nav-link">Home 2</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="track-shipment.html" class="nav-link active">Track Shipment</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="dashboard.html" class="nav-link">Dashboard</a>
+        </div>
         
         <div class="nav-controls">
           <button class="icon-btn" id="themeToggle" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button>
@@ -119,9 +141,9 @@
     <section class="container pb-5 fade-in">
       <div class="tracking-wrapper">
         <div class="tracking-search">
-          <form id="trackingForm" class="flex flex-col md-flex-row gap-2" style="flex-direction: column; @media (min-width:768px){flex-direction:row;}">
-            <input type="text" id="trackingInput" class="form-control" placeholder="Enter Tracking ID (e.g., SP123456789)" required style="padding: 1rem; font-size: 1.125rem;">
-            <button type="submit" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.125rem;">Track <i class="fas fa-search"></i></button>
+          <form id="trackingForm" class="tracking-form-row">
+            <input type="text" id="trackingInput" class="form-control" placeholder="Enter Tracking ID (e.g., SP123456789)" required style="padding: 1rem 1.5rem; font-size: 1.125rem;">
+            <button type="submit" class="btn btn-primary" style="font-size: 1.125rem; padding: 1rem 2rem;">Track <i class="fas fa-search"></i></button>
           </form>
         </div>
 
@@ -260,7 +282,7 @@
       <div class="grid grid-cols-4">
         <div>
           <div class="logo mb-3">
-            <svg width="28" height="24" viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 10H9" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M1 16H10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M5 22H8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M23 4L13 9L23 14L33 9L23 4Z" fill="currentColor"/><path d="M13 9V21L23 26V14L13 9Z" fill="var(--accent)"/><path d="M33 9V21L23 26V14L33 9Z" fill="var(--accent)" fill-opacity="0.65"/></svg> SWIFT
+            <img src="assets/images/logo.svg" alt="SWIFT Logo" style="height: 32px; width: auto; vertical-align: middle;">
           </div>
           <p style="font-size: 0.875rem; margin-bottom: 1.5rem;">Your trusted local logistics partner for fast, secure, and reliable parcel delivery.</p>
           <div class="flex gap-4">

@@ -19,6 +19,14 @@
     .contact-hero h1 {
       color: #fff;
     }
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 992px) {
+      .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
   </style>
 </head>
 <body>
@@ -27,7 +35,7 @@
   <header class="header">
     <div class="nav-container">
       <a href="index.html" class="logo">
-        <svg width="28" height="24" viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 10H9" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M1 16H10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M5 22H8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M23 4L13 9L23 14L33 9L23 4Z" fill="currentColor"/><path d="M13 9V21L23 26V14L13 9Z" fill="var(--accent)"/><path d="M33 9V21L23 26V14L33 9Z" fill="var(--accent)" fill-opacity="0.65"/></svg> SWIFT
+        <img src="assets/images/logo.svg" alt="SWIFT Logo" style="height: 32px; width: auto; vertical-align: middle;">
       </a>
       
       <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
@@ -35,13 +43,15 @@
       </button>
 
       <nav class="nav-menu" id="navMenu">
-        <a href="index.html" class="nav-link">Home 1</a>
-        <a href="home-2.html" class="nav-link">Home 2</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="services.html" class="nav-link">Services</a>
-        <a href="track-shipment.html" class="nav-link">Track Shipment</a>
-        <a href="dashboard.html" class="nav-link">Dashboard</a>
-        <a href="contact.html" class="nav-link active">Contact</a>
+        <div class="main-links">
+          <a href="index.html" class="nav-link">Home 1</a>
+          <a href="home-2.html" class="nav-link">Home 2</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="track-shipment.html" class="nav-link">Track Shipment</a>
+          <a href="contact.html" class="nav-link active">Contact</a>
+          <a href="dashboard.html" class="nav-link">Dashboard</a>
+        </div>
         
         <div class="nav-controls">
           <button class="icon-btn" id="themeToggle" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button>
@@ -66,7 +76,7 @@
 
     <!-- Contact Info & Form -->
     <section class="section container fade-in">
-      <div class="grid grid-cols-2 gap-4">
+      <div class="grid contact-grid gap-4">
         
         <!-- Contact Info -->
         <div>
@@ -146,7 +156,7 @@
       <div class="grid grid-cols-4">
         <div>
           <div class="logo mb-3">
-            <svg width="28" height="24" viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 10H9" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M1 16H10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M5 22H8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M23 4L13 9L23 14L33 9L23 4Z" fill="currentColor"/><path d="M13 9V21L23 26V14L13 9Z" fill="var(--accent)"/><path d="M33 9V21L23 26V14L33 9Z" fill="var(--accent)" fill-opacity="0.65"/></svg> SWIFT
+            <img src="assets/images/logo.svg" alt="SWIFT Logo" style="height: 32px; width: auto; vertical-align: middle;">
           </div>
           <p style="font-size: 0.875rem; margin-bottom: 1.5rem;">Your trusted local logistics partner for fast, secure, and reliable parcel delivery.</p>
           <div class="flex gap-4">

@@ -165,7 +165,7 @@
   <header class="header">
     <div class="nav-container">
       <a href="index.html" class="logo">
-        <svg width="28" height="24" viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 10H9" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M1 16H10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M5 22H8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M23 4L13 9L23 14L33 9L23 4Z" fill="currentColor"/><path d="M13 9V21L23 26V14L13 9Z" fill="var(--accent)"/><path d="M33 9V21L23 26V14L33 9Z" fill="var(--accent)" fill-opacity="0.65"/></svg> SWIFT
+        <img src="assets/images/logo.svg" alt="SWIFT Logo" style="height: 32px; width: auto; vertical-align: middle;">
       </a>
 
       <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
@@ -173,13 +173,15 @@
       </button>
 
       <nav class="nav-menu" id="navMenu">
-        <a href="index.html" class="nav-link active">Home 1</a>
-        <a href="home-2.html" class="nav-link">Home 2</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="services.html" class="nav-link">Services</a>
-        <a href="track-shipment.html" class="nav-link">Track Shipment</a>
-        <a href="dashboard.html" class="nav-link">Dashboard</a>
-        <a href="contact.html" class="nav-link">Contact</a>
+        <div class="main-links">
+          <a href="index.html" class="nav-link active">Home 1</a>
+          <a href="home-2.html" class="nav-link">Home 2</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="track-shipment.html" class="nav-link">Track Shipment</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="dashboard.html" class="nav-link">Dashboard</a>
+        </div>
 
         <div class="nav-controls">
           <button class="icon-btn" id="themeToggle" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button>
@@ -199,7 +201,7 @@
     <section class="hero-section">
       <img src="https://images.pexels.com/photos/6868160/pexels-photo-6868160.jpeg" alt="Delivery van" class="hero-bg">
       <div class="container fade-in">
-        <div class="hero-content">
+        <div class="hero-content text-left">
           <h1>Fast & Reliable Parcel Delivery</h1>
           <p>We handle your packages with care and deliver them on time. From local door-to-door drops to extended
             zones, trust SWIFT for your delivery needs.</p>
@@ -221,8 +223,11 @@
 
     <!-- Quick Tracking Section -->
     <section class="quick-track container fade-in">
+      <div class="text-center mb-4">
+        <h2>Track Your Shipment</h2>
+        <p class="text-muted">Enter your tracking ID to see real-time updates</p>
+      </div>
       <div class="card">
-        <h2 class="mb-3 text-center">Track Your Shipment</h2>
         <form class="track-form" action="track-shipment.html" method="GET">
           <input type="text" name="id" class="form-control" placeholder="Enter Tracking ID (e.g., SP123456789)"
             required>
@@ -250,7 +255,7 @@
       <div class="grid grid-cols-3">
         <div class="card text-center" style="display: flex; flex-direction: column; height: 100%;">
           <img src="https://images.pexels.com/photos/4393668/pexels-photo-4393668.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Same-Day Delivery" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
-          <h3>Same-Day Delivery</h3>
+          <h3 style="min-height: 4rem;">Same-Day Delivery</h3>
           <p class="text-muted" style="flex-grow: 1;">Urgent parcel? We'll pick it up and deliver it on the exact same day within local zones.
           </p>
           <a href="services.html" style="font-weight: 600; margin-top: auto;">Learn More <i
@@ -258,14 +263,14 @@
         </div>
         <div class="card text-center" style="display: flex; flex-direction: column; height: 100%;">
           <img src="https://images.pexels.com/photos/6169033/pexels-photo-6169033.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Standard Delivery" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
-          <h3>Standard Delivery</h3>
+          <h3 style="min-height: 4rem;">Standard Delivery</h3>
           <p class="text-muted" style="flex-grow: 1;">Cost-effective and reliable parcel delivery within 2-3 business days.</p>
           <a href="services.html" style="font-weight: 600; margin-top: auto;">Learn More <i
               class="fas fa-arrow-right"></i></a>
         </div>
         <div class="card text-center" style="display: flex; flex-direction: column; height: 100%;">
           <img src="https://images.pexels.com/photos/4481326/pexels-photo-4481326.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Business Parcels" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
-          <h3>Business Parcels</h3>
+          <h3 style="min-height: 4rem;">Business Parcels</h3>
           <p class="text-muted" style="flex-grow: 1;">Dedicated courier support for e-commerce, offices, and bulk shipments.</p>
           <a href="services.html" style="font-weight: 600; margin-top: auto;">Learn More <i
               class="fas fa-arrow-right"></i></a>
@@ -275,42 +280,44 @@
 
     <!-- Why Choose Us -->
     <section class="section section-light fade-in">
-      <div class="container grid grid-cols-2 items-center">
-        <div>
-          <img src="https://images.pexels.com/photos/10834810/pexels-photo-10834810.jpeg"
-            alt="Courier delivering parcel" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h2>Why Choose SWIFT?</h2>
+          <p class="text-muted">We are more than just a delivery service. We are your logistics partner dedicated to ensuring your packages reach their destination safely and on time.</p>
         </div>
-        <div>
-          <h2 class="mb-3">Why Choose SWIFT?</h2>
-          <p class="mb-4">We are more than just a delivery service. We are your logistics partner dedicated to ensuring
-            your packages reach their destination safely and on time.</p>
-
-          <ul class="flex flex-col gap-3">
-            <li class="flex items-center gap-2">
-              <i class="fas fa-check-circle" style="color: var(--accent); font-size: 1.25rem;"></i>
-              <div>
-                <strong>Fast Pickup</strong>
-                <p class="text-muted mb-0" style="font-size: 0.875rem;">Schedule a pickup online and we'll be there in
-                  no time.</p>
-              </div>
-            </li>
-            <li class="flex items-center gap-2">
-              <i class="fas fa-check-circle" style="color: var(--accent); font-size: 1.25rem;"></i>
-              <div>
-                <strong>Live Shipment Updates</strong>
-                <p class="text-muted mb-0" style="font-size: 0.875rem;">Track your parcel's journey at every step of the
-                  way.</p>
-              </div>
-            </li>
-            <li class="flex items-center gap-2">
-              <i class="fas fa-check-circle" style="color: var(--accent); font-size: 1.25rem;"></i>
-              <div>
-                <strong>Verified Delivery</strong>
-                <p class="text-muted mb-0" style="font-size: 0.875rem;">Get instant digital receipts and proof of
-                  delivery.</p>
-              </div>
-            </li>
-          </ul>
+        <div class="grid grid-cols-2 items-center">
+          <div>
+            <img src="https://images.pexels.com/photos/10834810/pexels-photo-10834810.jpeg"
+              alt="Courier delivering parcel" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+          </div>
+          <div>
+            <ul class="flex flex-col gap-3">
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check-circle mt-1" style="color: var(--accent); font-size: 1.25rem;"></i>
+                <div>
+                  <strong>Fast Pickup</strong>
+                  <p class="text-muted mb-0" style="font-size: 0.875rem;">Schedule a pickup online and we'll be there in
+                    no time.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check-circle mt-1" style="color: var(--accent); font-size: 1.25rem;"></i>
+                <div>
+                  <strong>Live Shipment Updates</strong>
+                  <p class="text-muted mb-0" style="font-size: 0.875rem;">Track your parcel's journey at every step of the
+                    way.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check-circle mt-1" style="color: var(--accent); font-size: 1.25rem;"></i>
+                <div>
+                  <strong>Verified Delivery</strong>
+                  <p class="text-muted mb-0" style="font-size: 0.875rem;">Get instant digital receipts and proof of
+                    delivery.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -347,11 +354,12 @@
     </section>
 
     <!-- Service Area Preview & CTA -->
-    <section class="section section-dark text-center fade-in">
-      <div class="container" style="max-width: 800px;">
-        <h2 class="mb-3">Ready to Send Your Parcel?</h2>
-        <p class="mb-4">We cover major local zones and extended areas. Experience hassle-free logistics with transparent
-          pricing.</p>
+    <section class="section section-dark fade-in text-center">
+      <div class="container" style="max-width: 800px; margin: 0 auto;">
+        <div class="text-center mb-4">
+          <h2>Ready to Send Your Parcel?</h2>
+          <p class="text-muted" style="color: rgba(255, 255, 255, 0.8);">We cover major local zones and extended areas. Experience hassle-free logistics with transparent pricing.</p>
+        </div>
         <div class="flex justify-center gap-3">
           <a href="dashboard.html" class="btn btn-primary" style="font-size: 1.125rem; padding: 1rem 2rem;">Book a
             Pickup Now</a>
@@ -369,7 +377,7 @@
       <div class="grid grid-cols-4">
         <div>
           <div class="logo mb-3">
-            <svg width="28" height="24" viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 10H9" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M1 16H10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M5 22H8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M23 4L13 9L23 14L33 9L23 4Z" fill="currentColor"/><path d="M13 9V21L23 26V14L13 9Z" fill="var(--accent)"/><path d="M33 9V21L23 26V14L33 9Z" fill="var(--accent)" fill-opacity="0.65"/></svg> SWIFT
+            <img src="assets/images/logo.svg" alt="SWIFT Logo" style="height: 32px; width: auto; vertical-align: middle;">
           </div>
           <p style="font-size: 0.875rem; margin-bottom: 1.5rem;">Your trusted local logistics partner for fast,
             secure, and reliable parcel delivery.</p>

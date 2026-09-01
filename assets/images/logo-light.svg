@@ -1,0 +1,16 @@
+<svg width="180" height="40" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(4, 4)">
+    <!-- Hexagon Base -->
+    <path d="M16 0 L30 8 L30 24 L16 32 L2 24 L2 8 Z" fill="#FFFFFF"/>
+    
+    <!-- Inner dynamic shape (Checkmark/Arrow) -->
+    <path d="M10 16 L15 21 L26 10" stroke="#F48C06" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    
+    <!-- Minor accent -->
+    <circle cx="26" cy="10" r="2.5" fill="#F48C06"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="44" y="27" font-family="'Inter', sans-serif" font-weight="900" font-size="22" fill="#FFFFFF" letter-spacing="1.5px">SWIFT</text>
+  <text x="45" y="36" font-family="'Inter', sans-serif" font-weight="600" font-size="8" fill="#F48C06" letter-spacing="1px" text-transform="uppercase">Logistics</text>
+</svg>
